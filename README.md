@@ -312,8 +312,7 @@ ping networkwalks.com
 ---
 
 ## 🎥 Windows 11 Lab Setup Demo
-
-[![Watch the Windows 10 Lab Setup Demo](https://www.linkedin.com/feed/update/urn:li:activity:7522352674940280832/)
+[![Watch the Windows 10 Lab Setup Demo](https://www.linkedin.com/feed/update/urn:li:activity:7522352674940280832/)]
 
 **[▶ Click here to watch or download the full demo video](https://www.linkedin.com/feed/update/urn:li:activity:7522352674940280832/)**
 ## 11. 📸 Screenshots and Evidence

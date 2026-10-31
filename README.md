@@ -28,10 +28,9 @@
 9. [Connectivity Testing](#9--connectivity-testing)
 10. [Troubleshooting](#10--troubleshooting)
 11. [Screenshots and Evidence](#11--screenshots-and-evidence)
-12. [Project Demonstration Video](#12--project-demonstration-video)
-13. [Learning Outcomes](#13--learning-outcomes)
-14. [Security Considerations and Disclaimer](#14--security-considerations-and-disclaimer)
-15. [Conclusion](#15--conclusion)
+12. [Learning Outcomes](#12--learning-outcomes)
+13. [Security Considerations and Disclaimer](#13--security-considerations-and-disclaimer)
+14. [Conclusion](#14--conclusion)
 
 ---
 
@@ -140,13 +139,13 @@ The ISO was obtained from Microsoft's Windows 10 download page (`microsoft.com/e
 >
 > ⏱️ Microsoft's download links are valid for **24 hours** after creation (the page in Figure 2 shows its expiry time), so download the ISO right away.
 
-![Microsoft Windows 10 ISO download page showing Select edition: Windows 10 (multi-edition ISO), Version 22H2](Screenshot_2026-10-31_161316.png)
+![Microsoft Windows 10 ISO download page showing Select edition: Windows 10 (multi-edition ISO), Version 22H2](01-windows10-iso-download-page.png)
 
-*Figure 1 – `Screenshot_2026-10-31_161316.png`: Microsoft's Windows 10 ISO page with "Windows 10 (multi-edition ISO)" selected under Select edition.*
+*Figure 1 – `01-windows10-iso-download-page.png`: Microsoft's Windows 10 ISO page with "Windows 10 (multi-edition ISO)" selected under Select edition.*
 
-![Microsoft download page offering Windows 10 English International 32-bit and 64-bit downloads, links valid for 24 hours](Screenshot_2026-10-31_161858.png)
+![Microsoft download page offering Windows 10 English International 32-bit and 64-bit downloads, links valid for 24 hours](images/02-windows10-iso-download-links.png)
 
-*Figure 2 – `Screenshot_2026-10-31_161858.png`: Download links for Windows 10 English International (32-bit and 64-bit), valid for 24 hours.*
+*Figure 2 – `02-windows10-iso-download-links.png`: Download links for Windows 10 English International (32-bit and 64-bit), valid for 24 hours.*
 
 ### 6.2 Creating the VM in VMware Workstation
 
@@ -168,9 +167,9 @@ The wizard notes that finishing will **create the VM and start installing Window
 
 > ⚠️ The adapter shows plain **NAT** at this stage. It is switched to the custom VMnet2 network in [Section 7](#7--vmware-network-configuration).
 
-![VMware New Virtual Machine Wizard Ready to Create Virtual Machine screen for Windows 10 x64 with 40 GB disk and 4096 MB memory](Screenshot_2026-10-31_183444.png)
+![VMware New Virtual Machine Wizard Ready to Create Virtual Machine screen for Windows 10 x64 with 40 GB disk and 4096 MB memory](images/03-vmware-new-vm-wizard-summary.png)
 
-*Figure 3 – `Screenshot_2026-10-31_183444.png`: New Virtual Machine Wizard summary for the Windows 10 x64 VM.*
+*Figure 3 – `03-vmware-new-vm-wizard-summary.png`: New Virtual Machine Wizard summary for the Windows 10 x64 VM.*
 
 > 📌 **TODO – screenshot needed:** the wizard step where the Windows 10 ISO file is selected (not in the repository yet).
 
@@ -178,9 +177,9 @@ The wizard notes that finishing will **create the VM and start installing Window
 
 After the VM powered on, the Windows 10 boot screen appeared and the installation continued until the first sign-in.
 
-![Windows 10 boot screen with Windows logo and loading spinner inside the VM](Screenshot_2026-10-31_201813.png)
+![Windows 10 boot screen with Windows logo and loading spinner inside the VM](images/04-windows10-boot-screen.png)
 
-*Figure 4 – `Screenshot_2026-10-31_201813.png`: Windows 10 starting up inside the VMware VM.*
+*Figure 4 – `04-windows10-boot-screen.png`: Windows 10 starting up inside the VMware VM.*
 
 > ⚠️ **Verify / add:** Windows edition chosen (Home/Pro), installation type, and whether VMware Tools finished installing. These details are not shown in the screenshots, so they are not stated here.
 
@@ -188,9 +187,9 @@ After the VM powered on, the Windows 10 boot screen appeared and the installatio
 
 The first sign-in screen shows the **NetworkWalks** user profile with the **Welcome** message while Windows prepares the desktop. The command prompts in later screenshots run as `C:\Users\NetworkWalks`.
 
-![Windows 10 sign-in screen showing the NetworkWalks user and Welcome message](Screenshot_2026-10-31_201835.png)
+![Windows 10 sign-in screen showing the NetworkWalks user and Welcome message](images/05-windows10-first-login-welcome.png)
 
-*Figure 5 – `Screenshot_2026-10-31_201835.png`: First sign-in as the NetworkWalks user.*
+*Figure 5 – `05-windows10-first-login-welcome.png`: First sign-in as the NetworkWalks user.*
 
 ---
 
@@ -219,6 +218,7 @@ Because the wizard created the VM with the default **NAT** adapter, the adapter 
 5. Click **OK** and power the VM on.
 
 > 📌 **TODO – screenshot needed:** the Windows 10 VM's *Network Adapter* settings showing the Custom VMnet2 selection. Until it is added, the evidence that the VM is on the lab network is indirect: it has an address in `10.0.0.0/24` and receives replies from `10.0.0.1` and `10.0.0.2` (Figures 6 and 7).
+> `images/TODO-windows10-network-adapter-settings.png`
 
 ---
 
@@ -250,9 +250,9 @@ netsh interface ip set address name="Ethernet0" static 10.0.0.10 255.255.255.0 1
 netsh interface ip set dns name="Ethernet0" static 8.8.8.8
 ```
 
-![Windows 10 Command Prompt showing ipconfig output and ping to 10.0.0.2 beside the Ethernet0 IPv4 properties dialog with 10.0.0.10, 255.255.255.0, 10.0.0.1 and DNS 8.8.8.8](Screenshot_2026-10-31_212843.png)
+![Windows 10 Command Prompt showing ipconfig output and ping to 10.0.0.2 beside the Ethernet0 IPv4 properties dialog with 10.0.0.10, 255.255.255.0, 10.0.0.1 and DNS 8.8.8.8](images/06-windows10-static-ip-and-ipconfig.png)
 
-*Figure 6 – `Screenshot_2026-10-31_212843.png`: Static IPv4 settings for Ethernet0 and the matching `ipconfig` output. A ping to Kali (`10.0.0.2`) is also visible.*
+*Figure 6 – `06-windows10-static-ip-and-ipconfig.png`: Static IPv4 settings for Ethernet0 and the matching `ipconfig` output. A ping to Kali (`10.0.0.2`) is also visible.*
 
 ---
 
@@ -283,9 +283,9 @@ ping networkwalks.com
 - A successful `ping networkwalks.com` proves both **DNS resolution** and **outbound internet access** from the Windows 10 VM, so the `8.8.8.8` DNS setting is working.
 - Only the **Windows 10 → Kali** direction was tested. Do not assume the reverse direction works until row 7 is run.
 
-![Windows 10 Command Prompt with ping results for 10.0.0.2, 10.0.0.1 and networkwalks.com all showing 0% packet loss](Screenshot_2026-10-31_222750.png)
+![Windows 10 Command Prompt with ping results for 10.0.0.2, 10.0.0.1 and networkwalks.com all showing 0% packet loss](07-windows10-connectivity-tests.png)
 
-*Figure 7 – `Screenshot_2026-10-31_222750.png`: Ping tests to Kali Linux (`10.0.0.2`), the gateway (`10.0.0.1`) and `networkwalks.com`, all with 0% loss.*
+*Figure 7 – `07-windows10-connectivity-tests.png`: Ping tests to Kali Linux (`10.0.0.2`), the gateway (`10.0.0.1`) and `networkwalks.com`, all with 0% loss.*
 
 > 📌 **TODO – screenshots needed:** `ping 8.8.8.8` from Windows 10, and `ping -c 4 10.0.0.10` from Kali Linux.
 
@@ -315,13 +315,13 @@ ping networkwalks.com
 
 | Fig. | File | What it shows | Section |
 |---|---|---|---|
-| 1 | `Screenshot_2026-10-31_161316.png` | Windows 10 ISO page, multi-edition ISO selected | 6.1 |
-| 2 | `Screenshot_2026-10-31_161858.png` | 32-bit / 64-bit download links, 24-hour validity | 6.1 |
-| 3 | `Screenshot_2026-10-31_183444.png` | VM creation summary (40 GB, 4096 MB, 2 cores, NAT) | 6.2 |
-| 4 | `Screenshot_2026-10-31_201813.png` | Windows 10 booting | 6.3 |
-| 5 | `Screenshot_2026-10-31_201835.png` | First sign-in as NetworkWalks | 6.4 |
-| 6 | `Screenshot_2026-10-31_212843.png` | Static IPv4 dialog + `ipconfig` + ping to Kali | 8 |
-| 7 | `Screenshot_2026-10-31_222750.png` | Pings to Kali, gateway and `networkwalks.com` | 9 |
+| 1 | `images/01-windows10-iso-download-page.png` | Windows 10 ISO page, multi-edition ISO selected | 6.1 |
+| 2 | `images/02-windows10-iso-download-links.png` | 32-bit / 64-bit download links, 24-hour validity | 6.1 |
+| 3 | `images/03-vmware-new-vm-wizard-summary.png` | VM creation summary (40 GB, 4096 MB, 2 cores, NAT) | 6.2 |
+| 4 | `images/04-windows10-boot-screen.png` | Windows 10 booting | 6.3 |
+| 5 | `images/05-windows10-first-login-welcome.png` | First sign-in as NetworkWalks | 6.4 |
+| 6 | `images/06-windows10-static-ip-and-ipconfig.png` | Static IPv4 dialog + `ipconfig` + ping to Kali | 8 |
+| 7 | `images/07-windows10-connectivity-tests.png` | Pings to Kali, gateway and `networkwalks.com` | 9 |
 
 **Still to add (TODO):**
 
@@ -332,24 +332,7 @@ ping networkwalks.com
 
 ---
 
-## 12. 🎬 Project Demonstration Video
-
-[![Watch Demo](https://img.shields.io/badge/▶_Watch-Windows_10_Lab_Demo_Video-red?style=for-the-badge)](PMx-Win10.mp4)
-
-**Direct link:** [PMx-Win10.mp4](PMx-Win10.mp4)
-
-The video (about 5 minutes) walks through the finished Windows 10 lab, including:
-
-- The Windows 10 VM starting up and signing in as **NetworkWalks**
-- The Windows 10 desktop with the Network Connections and IPv4 properties windows
-- Command Prompt tests on Windows 10 (`ipconfig` and `ping`)
-- A Kali Linux terminal showing its network configuration, switching between the two VMs
-
-> 📝 **Note:** GitHub does not reliably play MP4 files inline from a README. Click the badge or the direct link above to open `PMx-Win10.mp4` in the repository file viewer, where you can also download it.
-
----
-
-## 13. 🧠 Learning Outcomes
+## 12. 🧠 Learning Outcomes
 
 - Preparing a Windows 10 ISO and creating a Windows 10 x64 VM with VMware's New Virtual Machine Wizard.
 - Understanding why a VM created on the default **NAT** adapter must be moved onto the custom **VMnet2** network to share a subnet with Kali Linux.
@@ -360,7 +343,7 @@ The video (about 5 minutes) walks through the finished Windows 10 lab, including
 
 ---
 
-## 14. 🔐 Security Considerations and Disclaimer
+## 13. 🔐 Security Considerations and Disclaimer
 
 > ⚠️ **This is an educational lab. Use it only for authorized security testing.**
 
@@ -373,7 +356,7 @@ The video (about 5 minutes) walks through the finished Windows 10 lab, including
 
 ---
 
-## 15. 🏁 Conclusion
+## 14. 🏁 Conclusion
 
 The Windows 10 virtual machine was created in VMware Workstation, given the static address `10.0.0.10/24` with gateway `10.0.0.1` and DNS `8.8.8.8`, and verified from Command Prompt. It reaches the VMnet2 gateway, Kali Linux (`10.0.0.2`) and the internet, including DNS resolution of `networkwalks.com`.
 

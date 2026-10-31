@@ -313,9 +313,9 @@ ping networkwalks.com
 
 ## 🎥 Windows 11 Lab Setup Demo
 
-[![Watch the Windows 10 Lab Setup Demo](Pmx-Win10.mp4)
+[![Watch the Windows 10 Lab Setup Demo](PMx-Win10.mp4)
 
-**[▶ Click here to watch or download the full demo video](VIDEO_FILE_LINK)**
+**[▶ Click here to watch or download the full demo video](PMx-Win10.mp4)**
 ## 11. 📸 Screenshots and Evidence
 
 | Fig. | File | What it shows | Section |

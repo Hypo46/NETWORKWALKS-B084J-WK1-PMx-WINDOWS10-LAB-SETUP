@@ -143,7 +143,7 @@ The ISO was obtained from Microsoft's Windows 10 download page (`microsoft.com/e
 
 *Figure 1 – `01-windows10-iso-download-page.png`: Microsoft's Windows 10 ISO page with "Windows 10 (multi-edition ISO)" selected under Select edition.*
 
-![Microsoft download page offering Windows 10 English International 32-bit and 64-bit downloads, links valid for 24 hours](images/02-windows10-iso-download-links.png)
+![Microsoft download page offering Windows 10 English International 32-bit and 64-bit downloads, links valid for 24 hours](02-windows10-iso-download-links.png)
 
 *Figure 2 – `02-windows10-iso-download-links.png`: Download links for Windows 10 English International (32-bit and 64-bit), valid for 24 hours.*
 
@@ -167,7 +167,7 @@ The wizard notes that finishing will **create the VM and start installing Window
 
 > ⚠️ The adapter shows plain **NAT** at this stage. It is switched to the custom VMnet2 network in [Section 7](#7--vmware-network-configuration).
 
-![VMware New Virtual Machine Wizard Ready to Create Virtual Machine screen for Windows 10 x64 with 40 GB disk and 4096 MB memory](images/03-vmware-new-vm-wizard-summary.png)
+![VMware New Virtual Machine Wizard Ready to Create Virtual Machine screen for Windows 10 x64 with 40 GB disk and 4096 MB memory](03-vmware-new-vm-wizard-summary.png)
 
 *Figure 3 – `03-vmware-new-vm-wizard-summary.png`: New Virtual Machine Wizard summary for the Windows 10 x64 VM.*
 
@@ -177,7 +177,7 @@ The wizard notes that finishing will **create the VM and start installing Window
 
 After the VM powered on, the Windows 10 boot screen appeared and the installation continued until the first sign-in.
 
-![Windows 10 boot screen with Windows logo and loading spinner inside the VM](images/04-windows10-boot-screen.png)
+![Windows 10 boot screen with Windows logo and loading spinner inside the VM](04-windows10-boot-screen.png)
 
 *Figure 4 – `04-windows10-boot-screen.png`: Windows 10 starting up inside the VMware VM.*
 
@@ -187,7 +187,7 @@ After the VM powered on, the Windows 10 boot screen appeared and the installatio
 
 The first sign-in screen shows the **NetworkWalks** user profile with the **Welcome** message while Windows prepares the desktop. The command prompts in later screenshots run as `C:\Users\NetworkWalks`.
 
-![Windows 10 sign-in screen showing the NetworkWalks user and Welcome message](images/05-windows10-first-login-welcome.png)
+![Windows 10 sign-in screen showing the NetworkWalks user and Welcome message](05-windows10-first-login-welcome.png)
 
 *Figure 5 – `05-windows10-first-login-welcome.png`: First sign-in as the NetworkWalks user.*
 
@@ -250,7 +250,7 @@ netsh interface ip set address name="Ethernet0" static 10.0.0.10 255.255.255.0 1
 netsh interface ip set dns name="Ethernet0" static 8.8.8.8
 ```
 
-![Windows 10 Command Prompt showing ipconfig output and ping to 10.0.0.2 beside the Ethernet0 IPv4 properties dialog with 10.0.0.10, 255.255.255.0, 10.0.0.1 and DNS 8.8.8.8](images/06-windows10-static-ip-and-ipconfig.png)
+![Windows 10 Command Prompt showing ipconfig output and ping to 10.0.0.2 beside the Ethernet0 IPv4 properties dialog with 10.0.0.10, 255.255.255.0, 10.0.0.1 and DNS 8.8.8.8](06-windows10-static-ip-and-ipconfig.png)
 
 *Figure 6 – `06-windows10-static-ip-and-ipconfig.png`: Static IPv4 settings for Ethernet0 and the matching `ipconfig` output. A ping to Kali (`10.0.0.2`) is also visible.*
 
